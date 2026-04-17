@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="MobilityMonitor.Shared/MobilityMonitor.Shared.csproj" />
+  <Project Path="MobiltyMonitor.Worker/MobilityMonitor.Worker.csproj" />
+</Solution>
