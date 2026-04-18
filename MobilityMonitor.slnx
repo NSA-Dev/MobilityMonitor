@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="MobilityMonitor.Shared/MobilityMonitor.Shared.csproj" />
+  <Project Path="MobilityMonitor.UI/MobilityMonitor.UI.csproj" Id="2a554240-011a-4192-b985-2891ed4bd3ea" />
   <Project Path="MobiltyMonitor.Worker/MobilityMonitor.Worker.csproj" />
 </Solution>

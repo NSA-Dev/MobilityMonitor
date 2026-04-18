@@ -1,0 +1,33 @@
+﻿<Window x:Class="MobilityMonitor.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MobilityMonitor.UI"
+        mc:Ignorable="d"
+        Title="Transit Monitor" Height="450" Width="800">
+    <DockPanel>
+        <Border DockPanel.Dock="Top" Background="#2C3E50" Padding="10">
+            <TextBlock Text="VBN ANOMALY MONITOR" Foreground="White" FontSize="16" FontWeight="Bold"/>
+        </Border>
+
+        <StatusBar DockPanel.Dock="Bottom">
+            <TextBlock x:Name="StatusText" Text="Ready" />
+        </StatusBar>
+
+        <DataGrid x:Name="AnomalyGrid" 
+          AutoGenerateColumns="False" 
+          IsReadOnly="True" 
+          AlternatingRowBackground="#F9F9F9"
+          GridLinesVisibility="Horizontal"
+          HorizontalGridLinesBrush="#E0E0E0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Detected (UTC)" Binding="{Binding DetectedAt, StringFormat=\{0:HH:mm:ss\}}" Width="100"/>
+                <DataGridTextColumn Header="Route" Binding="{Binding RouteId}" FontWeight="Bold" Width="80"/>
+                <DataGridTextColumn Header="Stop" Binding="{Binding StopId}" Width="150"/>
+                <DataGridTextColumn Header="Delay (Min)" Binding="{Binding DelaySeconds, Converter={StaticResource SecondsToMinutesConverter}}" Width="*"/>
+                <DataGridTextColumn Header="Trip ID" Binding="{Binding TripId}" Width="120"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</Window>
